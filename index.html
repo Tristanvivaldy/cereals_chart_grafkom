@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pie Chart Favorit Ceha</title>
+    <script src="https://d3js.org/d3.v6.min.js"></script>
+    <style>
+        #canvas1{
+            border: 2px solid black;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="canvas1" width="400" height="400"></canvas>
+    <script src="index.js"></script>
+    <script type="module">
+        import * as lib from './lib.js';
+        var imageData = lib.ctx.getImageData(0, 0, lib.canvas.width, lib.canvas.height);
+
+        lib.lingkaran_polar(imageData, [lib.canvas.width/2,lib.canvas.height/2], 200, [1,0,0]);
+        lib.segi(imageData, [lib.canvas.width/2,lib.canvas.height/2],200,9,[255,0,0],13.18)
+        lib.segi(imageData, [lib.canvas.width/2,lib.canvas.height/2],200,9,[255,0,0],0.75)
+        lib.segi(imageData, [lib.canvas.width/2,lib.canvas.height/2],200,9,[255,0,0],0.18)
+        lib.segi(imageData, [lib.canvas.width/2,lib.canvas.height/2],200,9,[255,0,0],24.48)
+        lib.segi(imageData, [lib.canvas.width/2,lib.canvas.height/2],200,9,[255,0,0],1.88)
+        lib.segi(imageData, [lib.canvas.width/2,lib.canvas.height/2],200,9,[255,0,0],0.94)
+        lib.segi(imageData, [lib.canvas.width/2,lib.canvas.height/2],200,9,[255,0,0],1.12)
+        lib.segi(imageData, [lib.canvas.width/2,lib.canvas.height/2],200,9,[255,0,0],52.73)
+        lib.segi(imageData, [lib.canvas.width/2,lib.canvas.height/2],200,9,[255,0,0],4.7)
+        lib.dda_line(imageData, [lib.canvas.width/2,lib.canvas.height/2], [lib.canvas.width/2,lib.canvas.height/2], [255,0,0])
+
+        lib.ctx.putImageData(imageData,0, 0);
+    </script>
+</body>
+</html>
