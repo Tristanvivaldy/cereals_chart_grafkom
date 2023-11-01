@@ -116,7 +116,7 @@ export function segi(imageData, koordinat, rad, n, warna, jumlahPersen) {
     for (var theta = 0; theta <= 1; theta += 1) {
         let x = xc + rad * Math.cos((angka / 100)*(Math.PI*2));
         let y = yc + rad * Math.sin((angka / 100)*(Math.PI*2));
-        dda_line(imageData, [x,y], [canvas.width/2,canvas.height/2], [255,0,0])
+        dda_line(imageData, [x,y], [canvas.width/2,canvas.height/2], warna)
         if (theta != 1){
             angka += jumlahPersen;
         }

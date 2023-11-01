@@ -4,33 +4,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pie Chart Favorit Ceha</title>
-    <script src="https://d3js.org/d3.v6.min.js"></script>
     <style>
         #canvas1{
             border: 2px solid black;
         }
     </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
 </head>
 <body>
-    <canvas id="canvas1" width="400" height="400"></canvas>
-    <script src="index.js"></script>
+    <div class="kanpas">
+        <canvas id="canvas1" width="1200" height="600"></canvas>
+    </div>
+    <table id="table" cellpadding="5" cellspacing="0"></table>
     <script type="module">
         import * as lib from './lib.js';
-        var imageData = lib.ctx.getImageData(0, 0, lib.canvas.width, lib.canvas.height);
+        import * as data from './data.js';
 
-        lib.lingkaran_polar(imageData, [lib.canvas.width/2,lib.canvas.height/2], 200, [1,0,0]);
-        lib.segi(imageData, [lib.canvas.width/2,lib.canvas.height/2],200,9,[255,0,0],13.18)
-        lib.segi(imageData, [lib.canvas.width/2,lib.canvas.height/2],200,9,[255,0,0],0.75)
-        lib.segi(imageData, [lib.canvas.width/2,lib.canvas.height/2],200,9,[255,0,0],0.18)
-        lib.segi(imageData, [lib.canvas.width/2,lib.canvas.height/2],200,9,[255,0,0],24.48)
-        lib.segi(imageData, [lib.canvas.width/2,lib.canvas.height/2],200,9,[255,0,0],1.88)
-        lib.segi(imageData, [lib.canvas.width/2,lib.canvas.height/2],200,9,[255,0,0],0.94)
-        lib.segi(imageData, [lib.canvas.width/2,lib.canvas.height/2],200,9,[255,0,0],1.12)
-        lib.segi(imageData, [lib.canvas.width/2,lib.canvas.height/2],200,9,[255,0,0],52.73)
-        lib.segi(imageData, [lib.canvas.width/2,lib.canvas.height/2],200,9,[255,0,0],4.7)
-        lib.dda_line(imageData, [lib.canvas.width/2,lib.canvas.height/2], [lib.canvas.width/2,lib.canvas.height/2], [255,0,0])
+        // lib.lingkaran_polar(imageData, [lib.canvas.width/2,lib.canvas.height/2], 200, [1,0,0]);
+        // lib.segi(imageData, [lib.canvas.width/2,lib.canvas.height/2],200,9,[255,0,0],13.18)
+        // lib.floodFillStacked(imageData, lib.canvas, lib.canvas.width-10,lib.canvas.height/2+13, {r:0,g:0,b:0}, {r:255,g:0,b:0})
+        // lib.segi(imageData, [lib.canvas.width/2,lib.canvas.height/2],200,9,[0,0,255],0.75)
+        // lib.floodFillStacked(imageData, lib.canvas, lib.canvas.width-70,lib.canvas.height/2+150, {r:0,g:0,b:0}, {r:0,g:0,b:255})
+        // lib.segi(imageData, [lib.canvas.width/2,lib.canvas.height/2],200,9,[0,255,0],0.18)
+        // lib.floodFillStacked(imageData, lib.canvas, lib.canvas.width-74,lib.canvas.height/2+154, {r:0,g:0,b:0}, {r:0,g:255,b:0})
+        // lib.segi(imageData, [lib.canvas.width/2,lib.canvas.height/2],200,9,[255,255,0],24.48)
+        // lib.floodFillStacked(imageData, lib.canvas, lib.canvas.width-94,lib.canvas.height/2+154, {r:0,g:0,b:0}, {r:255,g:255,b:0})
+        // lib.segi(imageData, [lib.canvas.width/2,lib.canvas.height/2],200,9,[0,255,255],1.88)
+        // lib.floodFillStacked(imageData, lib.canvas, lib.canvas.width-354,lib.canvas.height/2+114, {r:0,g:0,b:0}, {r:0,g:255,b:255})
+        // lib.segi(imageData, [lib.canvas.width/2,lib.canvas.height/2],200,9,[255,0,255],0.94)
+        // lib.floodFillStacked(imageData, lib.canvas, lib.canvas.width-354,lib.canvas.height/2+96, {r:0,g:0,b:0}, {r:255,g:0,b:255})
+        // lib.segi(imageData, [lib.canvas.width/2,lib.canvas.height/2],200,9,[100,100,100],1.12)
+        // lib.floodFillStacked(imageData, lib.canvas, lib.canvas.width-354,lib.canvas.height/2+86, {r:0,g:0,b:0}, {r:100,g:100,b:100})
+        // lib.segi(imageData, [lib.canvas.width/2,lib.canvas.height/2],200,9,[50,50,50],52.73)
+        // lib.floodFillStacked(imageData, lib.canvas, lib.canvas.width-354,lib.canvas.height/2+66, {r:0,g:0,b:0}, {r:50,g:50,b:50})
+        // lib.segi(imageData, [lib.canvas.width/2,lib.canvas.height/2],200,9,[50,100,150],4.7)
+        // lib.floodFillStacked(imageData, lib.canvas, lib.canvas.width/2+100,lib.canvas.height/2-10, {r:0,g:0,b:0}, {r:50,g:100,b:150})
+        // lib.gambar_titik(imageData, lib.canvas.width/2+100,lib.canvas.height/2-10, [255,0,0])
+        // lib.dda_line(imageData, [lib.canvas.width/2,lib.canvas.height/2], [lib.canvas.width/2,lib.canvas.height/2], [255,0,0])
 
-        lib.ctx.putImageData(imageData,0, 0);
     </script>
 </body>
 </html>
